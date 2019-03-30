@@ -1,0 +1,22 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "TodoList in React/NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andre335/todolist-back.git"
+  },
+  "author": "Andre Goncalves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andre335/todolist-back/issues"
+  },
+  "homepage": "https://github.com/Andre335/todolist-back#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
