@@ -43,3 +43,15 @@ exports.deleteById = async (req, res) => {
         res.status(500).send({message: err.message});
     }
 }
+
+exports.update = async (req, res) => {
+    try {
+        const taskID = req.params.id;
+        await Task.update(taskID, req.body);
+
+        const updatedTask = await Task.findOne(taskID);
+        res.status(202).json(updatedTask); 
+    } catch (err) {
+        res.status(500).send({message: err.message});
+    }
+}

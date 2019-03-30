@@ -14,6 +14,9 @@ router.post('/', Task.create)
 // Delete Task by ID
 router.delete('/:id', Task.deleteById)
 
+// Update Tasks
+router.put('/:id', Task.update)
+
 module.exports = router
 
 
