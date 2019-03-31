@@ -1,6 +1,16 @@
-PUT http://localhost:3001/task/5bfe0b2dcdefd12aca70e4ad HTTP/1.1
+POST http://localhost:3001/task HTTP/1.1
 Content-Type: application/json
 
 {
-    "status": true
+    "title": "Feira",
+    "type": "Casa",
+    "period": "03/22/2019",
+    "done": false
 }
+
+###
+
+GET http://localhost:3001/task HTTP/1.1
+
+###
+DELETE http://localhost:3001/task/5ca032984818695dd7e701bd HTTP/1.1

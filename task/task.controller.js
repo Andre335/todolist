@@ -1,5 +1,6 @@
 'use strict';
-var Task = require('./task.server')
+var Task = require('./task.server');
+var ObjectID = require('mongodb').ObjectID;
 
 exports.findAll = async (req, res) => {
     try {
@@ -27,6 +28,7 @@ exports.findOne = async (req, res) => {
 
 exports.create = async (req, res) => {
     try {
+        req.body._id = ObjectID();
         await Task.create(req.body);
         res.status(201).json(req.body);
     } catch (err) {
