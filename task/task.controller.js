@@ -37,7 +37,8 @@ exports.create = async (req, res) => {
 exports.deleteById = async (req, res) => {
     try {
         const taskID = req.params.id;
-        await Task.deleteById(taskID);
+        const task = await Task.deleteById(taskID);
+        if (!task) return res.status(404).send({message: "Task not found"});
         res.status(202).send({message: "Task deleted"});
     } catch (err) {
         res.status(500).send({message: err.message});
@@ -47,10 +48,10 @@ exports.deleteById = async (req, res) => {
 exports.update = async (req, res) => {
     try {
         const taskID = req.params.id;
-        await Task.update(taskID, req.body);
-
-        const updatedTask = await Task.findOne(taskID);
-        res.status(202).json(updatedTask); 
+        const task = await Task.update(taskID, req.body);
+        if (!task) return res.status(404).send({message: "Task not found"});
+        const updTask = await Task.findOne(taskID);
+        res.status(202).json(updTask); 
     } catch (err) {
         res.status(500).send({message: err.message});
     }

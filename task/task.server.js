@@ -16,11 +16,11 @@ exports.create = async (data) => {
 };
 
 exports.update = async (id, data) => {
-    await Task.findByIdAndUpdate(id, {$set: data});
+    return await Task.findByIdAndUpdate(id, {$set: data});
 };
 
 exports.deleteById = async (id) => {
-    await Task.findByIdAndDelete(id);
+    return await Task.findByIdAndDelete(id);
 };
 
 exports.drop = async () => {

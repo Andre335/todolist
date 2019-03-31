@@ -16,7 +16,7 @@ var taskSchema = new Schema({
         type: Date,
         required: true
     },
-    status: {
+    done: {
         type: Boolean,
         required: true,
         default: false
